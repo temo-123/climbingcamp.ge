@@ -17,8 +17,8 @@ class PhotoGalleryController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\Photo_gallery::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/Photo_gallery');
+        CRUD::setModel(\App\Models\Gallery_photo::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/photo_gallery');
         CRUD::setEntityNameStrings('Photo_gallery', 'Photo_gallerys');
 
         CRUD::setColumns([

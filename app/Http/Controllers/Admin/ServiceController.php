@@ -18,7 +18,7 @@ class ServiceController extends CrudController
     public function setup()
     {
         CRUD::setModel(\App\Models\Service::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/Service');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/service');
         CRUD::setEntityNameStrings('Service', 'Services');
 
         CRUD::setColumns([

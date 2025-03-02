@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
+/**
+ * Class TagCrudController
+ * @package App\Http\Controllers\Admin
+ * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
+ */
 class FeedbackController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
@@ -18,7 +21,7 @@ class FeedbackController extends CrudController
     public function setup()
     {
         CRUD::setModel(\App\Models\Feedback::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/Feedback');
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/feedback');
         CRUD::setEntityNameStrings('Feedback', 'Feedbacks');
 
         CRUD::setColumns([

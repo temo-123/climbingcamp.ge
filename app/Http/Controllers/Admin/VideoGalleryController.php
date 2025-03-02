@@ -17,8 +17,8 @@ class VideoGalleryController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\Video_gallery::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/Video_gallery');
+        CRUD::setModel(\App\Models\Gallery_video::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/video_gallery');
         CRUD::setEntityNameStrings('Video_gallery', 'Video_gallerys');
 
         CRUD::setColumns([

@@ -16,8 +16,8 @@ Route::group([
     ),
     'namespace' => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
-    Route::crud('feedbacks', 'FeedbackController');
-    Route::crud('services', 'ServiceController');
+    Route::crud('feedback', 'FeedbackController');
+    Route::crud('service', 'ServiceController');
     Route::crud('site_info', 'SiteInfoController');
     Route::crud('photo_gallery', 'PhotoGalleryController');
     Route::crud('video_gallery', 'VideoGalleryController');
