@@ -10,4 +10,10 @@ class Feedback extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    protected $fillable = [
+        'person_name',
+        'country',
+        'text',
+    ];
 }

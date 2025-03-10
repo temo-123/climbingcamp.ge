@@ -26,36 +26,38 @@ class FeedbackController extends CrudController
 
         CRUD::setColumns([
             [
-                'name' => 'm_key',
+                'name' => 'person_name',
                 'type' => 'text',
-                'label' => "feedback Name"
+                'label' => "Person name",
             ],
             [
-                'name' => 'm_value',
+                'name' => 'country',
                 'type' => 'text',
-                'label' => "feedback (Default value)",
-            ]
+                'label' => "Country",
+            ],
+            [
+                'name' => 'text',
+                'type' => 'text',
+                'label' => "Text"
+            ],
         ]);
 
         CRUD::addFields([
             [
-				'name' => 'm_key',
-				'label' => 'feedback kay',
-				'type' => 'text',
-				'attributs' => [
-                    'required' => 'required',
-                    'placeholder' => 'Size'
-                ]
-			],
-			[
-				'name'  => 'm_value',
-				'label' => 'feedback value',
-				'type'  => 'text',
-				// 'attributes' => [
-				// 	'required'    => 'required',
-				// 	'placeholder' => 'New feedback'
-				// ]
-			],
+                'name' => 'person_name',
+                'type' => 'text',
+                'label' => "Name",
+            ],
+            [
+                'name' => 'country',
+                'type' => 'text',
+                'label' => "Country",
+            ],
+            [
+                'name' => 'text',
+                'type' => 'text',
+                'label' => "Feedback",
+            ]
         ]);
     }
 }
