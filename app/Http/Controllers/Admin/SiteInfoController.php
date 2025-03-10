@@ -23,35 +23,22 @@ class SiteInfoController extends CrudController
 
         CRUD::setColumns([
             [
-                'name' => 'm_key',
+                'name' => 'key_word',
                 'type' => 'text',
-                'label' => "Site_info Name"
+                'label' => "Key word"
             ],
             [
-                'name' => 'm_value',
+                'name' => 'text',
                 'type' => 'text',
-                'label' => "Site_info (Default value)",
+                'label' => "Text",
             ]
         ]);
 
         CRUD::addFields([
             [
-				'name' => 'm_key',
-				'label' => 'Site_info kay',
-				'type' => 'text',
-				'attributs' => [
-                    'required' => 'required',
-                    'placeholder' => 'Size'
-                ]
-			],
-			[
-				'name'  => 'm_value',
-				'label' => 'Site_info value',
-				'type'  => 'text',
-				// 'attributes' => [
-				// 	'required'    => 'required',
-				// 	'placeholder' => 'New Site_info'
-				// ]
+                'name' => 'text',
+                'type' => 'text',
+                'label' => "Text",
 			],
         ]);
     }

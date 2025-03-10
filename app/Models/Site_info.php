@@ -10,4 +10,9 @@ class Site_info extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    protected $fillable = [
+        'key_word',
+        'text',
+    ];
 }
