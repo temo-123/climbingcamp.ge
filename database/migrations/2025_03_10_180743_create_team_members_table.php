@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('team_members', function (Blueprint $table) {
             $table->id();
 
-            $table->text('person_name')->nulable();
-            $table->text('country')->nulable();
-            $table->text('text')->nulable();
-
+            $table->string('name')->nulable();
+            $table->text('position')->nulable();
+            $table->text('description')->nulable();
+            
             $table->text('image')->nulable();
 
             $table->timestamps();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('team_members');
     }
 };

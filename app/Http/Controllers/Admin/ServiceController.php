@@ -49,6 +49,10 @@ class ServiceController extends CrudController
                 'name' => 'text',
                 'type' => 'text',
                 'label' => "Text",
+            ],
+            [
+                'name'      => 'logo',
+                'type'      => 'upload_multiple',
             ]
         ]);
     }

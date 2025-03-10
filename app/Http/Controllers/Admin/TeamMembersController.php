@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-/**
- * Class TagCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
- */
-class FeedbackController extends CrudController
+class TeamMembersController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -20,43 +18,44 @@ class FeedbackController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\Feedback::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/feedback');
-        CRUD::setEntityNameStrings('Feedback', 'Feedbacks');
+        CRUD::setModel(\App\Models\Team::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/team');
+        CRUD::setEntityNameStrings('Team', 'Teams');
 
+        
         CRUD::setColumns([
             [
-                'name' => 'person_name',
+                'name' => 'name',
                 'type' => 'text',
                 'label' => "Person name",
             ],
             [
-                'name' => 'country',
+                'name' => 'position',
                 'type' => 'text',
-                'label' => "Country",
+                'label' => "Position",
             ],
             [
-                'name' => 'text',
+                'name' => 'description',
                 'type' => 'text',
-                'label' => "Text"
+                'label' => "Description"
             ],
         ]);
 
         CRUD::addFields([
             [
-                'name' => 'person_name',
+                'name' => 'name',
                 'type' => 'text',
-                'label' => "Name",
+                'label' => "Person name",
             ],
             [
-                'name' => 'country',
+                'name' => 'position',
                 'type' => 'text',
-                'label' => "Country",
+                'label' => "Position",
             ],
             [
-                'name' => 'text',
+                'name' => 'description',
                 'type' => 'text',
-                'label' => "Feedback",
+                'label' => "Description"
             ],
             [
                 'name'      => 'image',
