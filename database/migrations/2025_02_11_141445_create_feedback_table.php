@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title')->nulable();
+            $table->text('person_name')->nulable();
+            $table->text('country')->nulable();
+            $table->text('text')->nulable();
+
             $table->timestamps();
         });
     }

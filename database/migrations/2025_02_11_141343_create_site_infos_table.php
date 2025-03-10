@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('site_infos', function (Blueprint $table) {
             $table->id();
+
+            $table->string('key_word')->nulable();
+            $table->text('text')->nulable();
+
             $table->timestamps();
         });
     }

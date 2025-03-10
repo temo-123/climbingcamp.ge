@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('gallery_videos', function (Blueprint $table) {
             $table->id();
+
+            $table->string('description')->nulable();
+            $table->text('video_url');
+
             $table->timestamps();
         });
     }
