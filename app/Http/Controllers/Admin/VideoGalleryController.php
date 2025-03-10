@@ -23,36 +23,28 @@ class VideoGalleryController extends CrudController
 
         CRUD::setColumns([
             [
-                'name' => 'm_key',
+                'name' => 'description',
                 'type' => 'text',
-                'label' => "Video_gallery Name"
+                'label' => "Description for video"
             ],
             [
-                'name' => 'm_value',
-                'type' => 'text',
-                'label' => "Video_gallery (Default value)",
+                'name' => 'video_url',
+                'type' => 'url',
+                'label' => "Video URL",
             ]
         ]);
 
         CRUD::addFields([
             [
-				'name' => 'm_key',
-				'label' => 'Video_gallery kay',
-				'type' => 'text',
-				'attributs' => [
-                    'required' => 'required',
-                    'placeholder' => 'Size'
-                ]
-			],
-			[
-				'name'  => 'm_value',
-				'label' => 'Video_gallery value',
-				'type'  => 'text',
-				// 'attributes' => [
-				// 	'required'    => 'required',
-				// 	'placeholder' => 'New Video_gallery'
-				// ]
-			],
+                'name' => 'description',
+                'type' => 'text',
+                'label' => "Short Description For Video"
+            ],
+            [
+                'name' => 'video_url',
+                'type' => 'url',
+                'label' => "Video URL",
+            ]
         ]);
     }
 }

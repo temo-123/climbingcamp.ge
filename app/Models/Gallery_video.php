@@ -10,4 +10,9 @@ class Gallery_video extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'video_url',
+    ];
 }
