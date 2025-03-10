@@ -23,36 +23,33 @@ class ServiceController extends CrudController
 
         CRUD::setColumns([
             [
-                'name' => 'm_key',
+                'name' => 'title',
                 'type' => 'text',
-                'label' => "Service Name"
+                'label' => "Title",
             ],
             [
-                'name' => 'm_value',
+                'name' => 'description',
                 'type' => 'text',
-                'label' => "Service (Default value)",
-            ]
+                'label' => "Short description",
+            ],
         ]);
 
         CRUD::addFields([
             [
-				'name' => 'm_key',
-				'label' => 'Service kay',
-				'type' => 'text',
-				'attributs' => [
-                    'required' => 'required',
-                    'placeholder' => 'Size'
-                ]
-			],
-			[
-				'name'  => 'm_value',
-				'label' => 'Service value',
-				'type'  => 'text',
-				// 'attributes' => [
-				// 	'required'    => 'required',
-				// 	'placeholder' => 'New Service'
-				// ]
-			],
+                'name' => 'title',
+                'type' => 'text',
+                'label' => "Title",
+            ],
+            [
+                'name' => 'description',
+                'type' => 'text',
+                'label' => "Short description",
+            ],
+            [
+                'name' => 'text',
+                'type' => 'text',
+                'label' => "Text",
+            ]
         ]);
     }
 }

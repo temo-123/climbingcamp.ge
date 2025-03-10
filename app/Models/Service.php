@@ -10,4 +10,10 @@ class Service extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'text',
+    ];
 }
