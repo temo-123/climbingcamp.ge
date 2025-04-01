@@ -23,12 +23,12 @@ class PhotoGalleryController extends CrudController
 
         CRUD::setColumns([
             [
-                'name' => 'm_key',
+                'name' => 'description',
                 'type' => 'text',
                 'label' => "Photo_gallery Name"
             ],
             [
-                'name' => 'm_value',
+                'name' => 'image',
                 'type' => 'text',
                 'label' => "Photo_gallery (Default value)",
             ]
@@ -36,8 +36,8 @@ class PhotoGalleryController extends CrudController
 
         CRUD::addFields([
             [
-				'name' => 'm_key',
-				'label' => 'Photo_gallery kay',
+				'name' => 'description',
+				'label' => 'Short Description',
 				'type' => 'text',
 				'attributs' => [
                     'required' => 'required',
@@ -45,13 +45,9 @@ class PhotoGalleryController extends CrudController
                 ]
 			],
 			[
-				'name'  => 'm_value',
-				'label' => 'Photo_gallery value',
-				'type'  => 'text',
-				// 'attributes' => [
-				// 	'required'    => 'required',
-				// 	'placeholder' => 'New Photo_gallery'
-				// ]
+				'name'  => 'image',
+				'label' => 'Image',
+                'type'      => 'upload',
 			],
         ]);
     }

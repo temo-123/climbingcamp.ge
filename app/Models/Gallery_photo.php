@@ -10,4 +10,9 @@ class Gallery_photo extends Model
 {
     use CrudTrait;
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'image',
+    ];
 }
