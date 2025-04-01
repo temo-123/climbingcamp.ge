@@ -11,6 +11,7 @@ use App\Models\Gallery_video;
 use App\Models\Service;
 use App\Models\Site_info;
 use App\Models\Team_members;
+use App\Models\Tour;
 
 class IndexController extends Controller
 {
@@ -21,6 +22,7 @@ class IndexController extends Controller
         $services = Service::get();
         $site_info = Site_info::get();
         $team_members = Team_members::get();
+        $tours = Tour::get();
 
         $data = [
             'feedbacks'=>$feedbacks,
@@ -29,6 +31,7 @@ class IndexController extends Controller
             'services'=>$services,
             'site_info'=>$site_info,
             'team_members'=>$team_members,
+            'tours'=>$tours,
         ];
 
         return view('pages/index')->with($data);

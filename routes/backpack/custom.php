@@ -21,7 +21,8 @@ Route::group([
     Route::crud('site_info', 'SiteInfoController');
     Route::crud('photo_gallery', 'PhotoGalleryController');
     Route::crud('video_gallery', 'VideoGalleryController');
-    Route::crud('team_member', 'TeamMembersController');
+    Route::crud('team_member', 'TeamMemberController');
+    Route::crud('tour', 'TourController');
 }); // this should be the absolute last line of this file
 
 /**

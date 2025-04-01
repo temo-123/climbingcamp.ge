@@ -6,14 +6,18 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Team_members extends Model
+class Tour extends Model
 {
     use CrudTrait;
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'position',
+        'title',
+        'location',
+        'days',
+        'persons',
+        'price',
         'description',
+        'image',
     ];
 }
