@@ -29,7 +29,7 @@ class VideoGalleryController extends CrudController
             ],
             [
                 'name' => 'video_url',
-                'type' => 'url',
+                'type' => 'text',
                 'label' => "Video URL",
             ]
         ]);
@@ -42,7 +42,7 @@ class VideoGalleryController extends CrudController
             ],
             [
                 'name' => 'video_url',
-                'type' => 'url',
+                'type' => 'text',
                 'label' => "Video URL",
             ]
         ]);

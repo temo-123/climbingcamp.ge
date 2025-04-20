@@ -13,7 +13,7 @@ use App\Models\Site_info;
 use App\Models\Team_member;
 use App\Models\Tour;
 
-class IndexController extends Controller
+class ServicesController extends Controller
 {
     function index() {
         $feedbacks = Feedback::get();
@@ -34,6 +34,17 @@ class IndexController extends Controller
             'tours'=>$tours,
         ];
 
-        return view('pages/index')->with($data);
+        return view('pages/lists/services')->with($data);
+    }
+
+    function article_page(Request $request) {
+        $gallery_photos = Gallery_photo::get();
+        
+        $data = [
+            'gallery_photos'=>$gallery_photos,
+            'article' => Service::where('id', '=', $request->id)->first(),
+        ];
+
+        return view('pages/articles/article')->with($data);
     }
 }

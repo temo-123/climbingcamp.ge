@@ -8,16 +8,22 @@
             <div class="row g-4">
                 @foreach ($services as $service)
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <span class="text-primary mb-4 fa-3x">
-                                <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
-                                {!! $service->logo !!}
-                            </span>
-                            <h5>{{$service->title}}</h5>
-                            <p>{{$service->description}}</p>
+
+                    <a href="{{ route( 'service_page', ['id' => $service->id] ) }}" >
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <span class="text-primary mb-4 fa-3x">
+                                    <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
+                                    {!! $service->logo !!}
+                                </span>
+
+                                <h5>{{$service->title}}</h5>
+                                
+                                <p>{{$service->description}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
                 </div>
                 @endforeach
             </div>

@@ -42,39 +42,38 @@ class ServiceController extends CrudController
             ],
             [
                 'name' => 'description',
-                'type' => 'text',
+                'type' => 'summernote',
                 'label' => "Short description",
+                'options' => [
+                    'minheight' => 300,
+                    'height' => 400
+                ]
             ],
             [
                 'name' => 'text',
-                'type' => 'text',
+                'type' => 'summernote',
                 'label' => "Text",
+                'options' => [
+                    'minheight' => 300,
+                    'height' => 400
+                ]
             ],
             [
                 'name' => 'logo',
                 'type' => 'text',
                 'label' => 'Logo',
             ],
-            // [
-            //     'name'      => 'logo',
-            //     'label' => "Upload Logo",
-            //     // 'type' => 'image',
-            //     'type'      => 'upload_multiple',
-            //     'update' => true,
-            //     'disc' => 'public',
-            //     'prefix' => 'uploads/',
-
-            //     'crop' => true,
-            // ],
-            // [
-                // 'label' => "Profile Image",
-                // 'name' => "image",
+            [
+                'name'      => 'images',
+                'label' => "Gallery images",
                 // 'type' => 'image',
-                // 'crop' => true, // set to true to allow cropping, false to disable
-                // 'aspect_ratio' => 1, // omit or set to 0 to allow any aspect ratio
-                // 'disk'      => 's3_bucket', // in case you need to show images from a different disk
-                // 'prefix'    => 'uploads/images/profile_pictures/' // in case your db value is only the file name (no path), you can use this to prepend your path to the image src (in HTML), before it's shown to the user;
-            // ]
+                'type'      => 'upload_multiple',
+                'update' => true,
+                'disc' => 'public',
+                'prefix' => 'uploads/',
+
+                'crop' => true,
+            ],
         ]);
     }
 }

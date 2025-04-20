@@ -18,8 +18,8 @@ class TeamMemberController extends CrudController
 
     public function setup()
     {
-        CRUD::setModel(\App\Models\Team::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/team');
+        CRUD::setModel(\App\Models\Team_member::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/team_member');
         CRUD::setEntityNameStrings('Team', 'Teams');
 
         
@@ -54,13 +54,24 @@ class TeamMemberController extends CrudController
             ],
             [
                 'name' => 'description',
-                'type' => 'text',
-                'label' => "Description"
+                'type' => 'summernote',
+                'label' => "Description",
+                'options' => [
+                    'minheight' => 300,
+                    'height' => 400
+                ]
             ],
             [
                 'name'      => 'image',
+                'label' => "Member portret",
+                // 'type' => 'image',
                 'type'      => 'upload',
-            ]
+                'update' => true,
+                'disc' => 'public',
+                'prefix' => 'uploads/',
+
+                'crop' => true,
+            ],
         ]);
     }
 }

@@ -13,7 +13,7 @@ use App\Models\Site_info;
 use App\Models\Team_member;
 use App\Models\Tour;
 
-class IndexController extends Controller
+class ContactController extends Controller
 {
     function index() {
         $feedbacks = Feedback::get();
@@ -34,6 +34,6 @@ class IndexController extends Controller
             'tours'=>$tours,
         ];
 
-        return view('pages/index')->with($data);
+        return view('pages/contact')->with($data);
     }
 }

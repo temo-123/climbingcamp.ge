@@ -14,12 +14,16 @@
     @include('page_assets.gallery') 
     <!-- Destination Start -->
 
+    <!-- Destination Start -->
+    @include('page_assets.video_gallery') 
+    <!-- Destination Start -->
+
     <!-- Package Start -->
     @include('page_assets.tours') 
     <!-- Package End -->
 
     <!-- Booking Start -->
-    @include('page_assets.index_form') 
+    @include('page_assets.message_form') 
     <!-- Booking Start -->
 
     <!-- Team Start -->

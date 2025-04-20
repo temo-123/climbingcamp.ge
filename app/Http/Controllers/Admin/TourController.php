@@ -48,11 +48,11 @@ class TourController extends CrudController
                 'type' => 'text',
                 'label' => "What the price?"
             ],
-            [
-                'name' => 'description',
-                'type' => 'text',
-                'label' => "Description"
-            ],
+            // [
+            //     'name' => 'description',
+            //     'type' => 'text',
+            //     'label' => "Description"
+            // ],
         ]);
 
         CRUD::addFields([
@@ -83,13 +83,49 @@ class TourController extends CrudController
             ],
             [
                 'name' => 'description',
-                'type' => 'text',
-                'label' => "Description"
+                'type' => 'summernote',
+                'label' => "Description",
+                'options' => [
+                    'minheight' => 300,
+                    'height' => 400
+                ]
             ],
+            // [
+            //     'name'      => 'image',
+            //     'type'      => 'upload',
+            // ],
+
+            // [
+            //     'label' => "Article Image",
+            //     'name' => "image",
+            //     'type' => ($show ? 'view' : 'upload'),
+            //     'view' => 'partials/image',
+            //     'upload' => true,
+            // ]
+
             [
                 'name'      => 'image',
+                'label' => "Article image",
+                // 'type' => 'image',
                 'type'      => 'upload',
-            ]
+                'update' => true,
+                'disc' => 'public',
+                'prefix' => 'uploads/',
+
+                'crop' => true,
+            ],
+
+            [
+                'name'      => 'images',
+                'label' => "Gallery images",
+                // 'type' => 'image',
+                'type'      => 'upload_multiple',
+                'update' => true,
+                'disc' => 'public',
+                'prefix' => 'uploads/',
+
+                'crop' => true,
+            ],
         ]);
     }
 }
