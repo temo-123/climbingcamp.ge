@@ -20,6 +20,7 @@ class PhotoGalleryController extends CrudController
         CRUD::setModel(\App\Models\Gallery_photo::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/photo_gallery');
         CRUD::setEntityNameStrings('Photo_gallery', 'Photo_gallerys');
+        CRUD::field('image')->type('upload')->withFiles();
 
         CRUD::setColumns([
             [
@@ -34,6 +35,7 @@ class PhotoGalleryController extends CrudController
             ]
         ]);
 
+        $show = false;
         CRUD::addFields([
             [
 				'name' => 'description',
@@ -45,10 +47,12 @@ class PhotoGalleryController extends CrudController
                 ]
 			],
 			[
-				'name'  => 'image',
-				'label' => 'Image',
-                'type'      => 'upload',
-			],
+                'label' => "Article Image",
+                'name' => "image",
+                'type' => ($show ? 'view' : 'upload'),
+                'view' => 'partials/image',
+                'upload' => true,
+            ]
         ]);
     }
 }
