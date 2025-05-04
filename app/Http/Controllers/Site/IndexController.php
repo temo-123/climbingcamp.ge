@@ -24,7 +24,10 @@ class IndexController extends Controller
         $team_members = Team_member::get();
         $tours = Tour::get();
 
+        // $head_image = Tour::get();
+
         $data = [
+            'head_image' => [],
             'feedbacks'=>$feedbacks,
             'gallery_photos'=>$gallery_photos,
             'gallery_videos'=>$gallery_videos,

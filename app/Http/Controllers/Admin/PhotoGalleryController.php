@@ -24,15 +24,17 @@ class PhotoGalleryController extends CrudController
 
         CRUD::setColumns([
             [
+                'name' => 'image',
+                'type' => 'image',
+                'label' => "Photo_gallery (Default value)",
+                'height' => '100px',
+                // 'width'  => '30px',
+            ],
+            [
                 'name' => 'description',
                 'type' => 'text',
                 'label' => "Photo_gallery Name"
             ],
-            [
-                'name' => 'image',
-                'type' => 'text',
-                'label' => "Photo_gallery (Default value)",
-            ]
         ]);
 
         $show = false;
@@ -50,9 +52,11 @@ class PhotoGalleryController extends CrudController
                 'label' => "Article Image",
                 'name' => "image",
                 'type' => ($show ? 'view' : 'upload'),
-                'view' => 'partials/image',
+                'view' => 'public/image/',
                 'upload' => true,
-            ]
+                'crop' => true, // set to true to allow cropping, false to disable
+                'prefix' => '' // in case you only store the filename in the database, this text will be prepended to the database value
+            ],
         ]);
     }
 }

@@ -13,6 +13,12 @@ class Tour extends Model
     use CrudTrait;
     use HasFactory;
 
+    protected $table = 'tours';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    protected $guarded = ['id'];
+    // protected $casts = [
+    
     protected $fillable = [
         'title',
         'location',
