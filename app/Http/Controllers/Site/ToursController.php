@@ -28,12 +28,20 @@ class ToursController extends Controller
         // $gallery_photos = Tour::where('id', '=', $request->id)->first()->images;
         $tour = Tour::where('id', '=', $request->id)->first();
         
+        $site_info = Site_info::get();
+        $site_image = Site_image::get();
+
+        $head_image = $site_image->where('key_word', 'header_image')->first();
+
         $data = [
-            'head_image' => [
-                'image' => '../public/storage/' . $tour -> image,
-                'title' => $tour -> title,
-                'short_description' => $tour -> description
-            ],
+            'head_image' => $head_image->image,
+            'site_image' => $site_image,
+            'site_info' => $site_info,
+            // 'head_image' => [
+            //     'image' => '../public/storage/' . $tour -> image,
+            //     'title' => $tour -> title,
+            //     'short_description' => $tour -> description
+            // ],
             'gallery_photos' => $gallery_photos,
             'article' => $tour,
         ];

@@ -9,4 +9,5 @@
 <x-backpack::menu-item title="Photo Gallery" icon="" :link="backpack_url('photo_gallery')" />
 <x-backpack::menu-item title="Video Gallery" icon="" :link="backpack_url('video_gallery')" />
 
-<x-backpack::menu-item title="Site info" icon="" :link="backpack_url('site_info')" />
+<x-backpack::menu-item title="Site Info" icon="" :link="backpack_url('site_info')" />
+<x-backpack::menu-item title="Site Images" icon="" :link="backpack_url('site_image')" />

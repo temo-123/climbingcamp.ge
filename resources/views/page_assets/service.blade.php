@@ -3,7 +3,9 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="mb-5">Our Services</h1>
+                <!-- <h1 class="mb-5">Our Services</h1> -->
+
+                <h1 class="mb-5">{{ $site_info->where('key_word', 'services_title')->first()->text }}</h1>
             </div>
             <div class="row g-4">
                 @foreach ($services as $service)

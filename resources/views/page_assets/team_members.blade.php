@@ -4,6 +4,8 @@
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6>
                 <h1 class="mb-5">Our Teame</h1>
+
+                <h1 class="mb-5">{{ $site_info->where('key_word', 'team_members_title')->first()->text }}</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">

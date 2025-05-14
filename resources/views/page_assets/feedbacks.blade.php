@@ -3,7 +3,8 @@
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Clients Say!!!</h1>
+                <!-- <h1 class="mb-5">Our Clients Say!!!</h1> -->
+                <h1 class="mb-5">{{ $site_info->where('key_word', 'feedbacks_title')->first()->text }}</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
                 @foreach ($feedbacks as $feedback)

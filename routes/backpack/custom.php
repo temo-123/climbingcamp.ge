@@ -18,11 +18,13 @@ Route::group([
 ], function () { // custom admin routes
     Route::crud('feedback', 'FeedbackController');
     Route::crud('service', 'ServiceController');
-    Route::crud('site_info', 'SiteInfoController');
     Route::crud('photo_gallery', 'PhotoGalleryController');
     Route::crud('video_gallery', 'VideoGalleryController');
     Route::crud('team_member', 'TeamMemberController');
     Route::crud('tour', 'TourController');
+
+    Route::crud('site_info', 'SiteInfoController');
+    Route::crud('site_image', 'SiteImageController');
 }); // this should be the absolute last line of this file
 
 /**

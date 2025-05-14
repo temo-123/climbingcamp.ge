@@ -23,15 +23,15 @@ class SiteInfoController extends CrudController
 
         CRUD::setColumns([
             [
+                'name' => 'text',
+                'type' => 'text',
+                'label' => "Text",
+            ],
+            [
                 'name' => 'key_word',
                 'type' => 'text',
                 'label' => "Key word"
             ],
-            [
-                'name' => 'text',
-                'type' => 'text',
-                'label' => "Text",
-            ]
         ]);
 
         CRUD::addFields([

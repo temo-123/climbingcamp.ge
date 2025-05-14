@@ -9,9 +9,11 @@ use App\Models\Feedback;
 use App\Models\Gallery_photo;
 use App\Models\Gallery_video;
 use App\Models\Service;
-use App\Models\Site_info;
 use App\Models\Team_member;
 use App\Models\Tour;
+
+use App\Models\Site_info;
+use App\Models\Site_image;
 
 class ContactController extends Controller
 {
@@ -24,7 +26,15 @@ class ContactController extends Controller
         $team_members = Team_member::get();
         $tours = Tour::get();
 
+        $site_info = Site_info::get();
+        $site_image = Site_image::get();
+
+        $head_image = $site_image->where('key_word', 'header_image')->first();
+
         $data = [
+            'head_image' => $head_image->image,
+            'site_image' => $site_image,
+            'site_info' => $site_info,
             'feedbacks'=>$feedbacks,
             'gallery_photos'=>$gallery_photos,
             'gallery_videos'=>$gallery_videos,

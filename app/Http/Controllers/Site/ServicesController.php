@@ -24,7 +24,15 @@ class ServicesController extends Controller
         $team_members = Team_member::get();
         $tours = Tour::get();
 
+        $site_info = Site_info::get();
+        $site_image = Site_image::get();
+
+        $head_image = $site_image->where('key_word', 'header_image')->first();
+
         $data = [
+            'head_image' => $head_image->image,
+            'site_image' => $site_image,
+            'site_info' => $site_info,
             'feedbacks'=>$feedbacks,
             'gallery_photos'=>$gallery_photos,
             'gallery_videos'=>$gallery_videos,
