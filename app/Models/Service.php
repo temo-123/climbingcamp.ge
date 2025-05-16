@@ -30,8 +30,13 @@ class Service extends Model
         });
     }
     
-    public function setImagesAttributes($value, $attribute_name, $disk, $destination_path)
+    public function setImagesAttributes($value)
     {
+        $attribute_name = "images";
+        // destination path relative to the disk above
+        $destination_path = "services";
+        $disk = "public";
+
         $originalModelValue = $this->getOriginal()[$attribute_name] ?? [];
 
         if (! is_array($originalModelValue)) {

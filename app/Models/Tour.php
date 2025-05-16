@@ -44,9 +44,10 @@ class Tour extends Model
     
     public function setImageAttribute($value)
     {
-        $attribute_name = "image";
+        $attribute_name = "images";
         // destination path relative to the disk above
-        $destination_path = "articles";
+        $destination_path = "tours";
+        $disk = "public";
     
         // if the image was erased
         if ($value==null) {
@@ -57,15 +58,19 @@ class Tour extends Model
             $this->attributes[$attribute_name] = null;
         }
     
-        $disk = "public";
         // filename is generated -  md5($file->getClientOriginalName().random_int(1, 9999).time()).'.'.$file->getClientOriginalExtension()
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
         $this->attributes[$attribute_name] = 'storage/' . $this->attributes[$attribute_name];
     
     }
 
-    public function setImagesAttributes($value, $attribute_name, $disk, $destination_path)
+    public function setImagesAttributes($value)
     {
+        $attribute_name = "images";
+        // destination path relative to the disk above
+        $destination_path = "tours";
+        $disk = "public";
+
         $originalModelValue = $this->getOriginal()[$attribute_name] ?? [];
 
         if (! is_array($originalModelValue)) {

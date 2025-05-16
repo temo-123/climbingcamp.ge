@@ -20,6 +20,7 @@ class ServiceController extends CrudController
         CRUD::setModel(\App\Models\Service::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/service');
         CRUD::setEntityNameStrings('Service', 'Services');
+        // CRUD::field('images')->type('upload_multiple')->withFiles();
 
         CRUD::setColumns([
             [
