@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ $site_info->where('key_word', 'adres')->first()->text }}</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ $site_info->where('key_word', 'address')->first()->text }}</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{ $site_info->where('key_word', 'phone_number')->first()->text }}</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{ $site_info->where('key_word', 'email')->first()->text }}</p>
                     <!-- <div class="d-flex pt-2">

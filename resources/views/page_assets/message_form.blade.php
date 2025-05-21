@@ -5,10 +5,10 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-md-6 text-white">
                         <!-- <h6 class="text-white text-uppercase">Booking</h6> -->
-                        <h1 class="text-white mb-4">Online Booking</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
+                        <h1 class="text-white mb-4">{{ $site_info->where('key_word', 'message_title')->first()->text }}</h1>
+                        <p class="mb-4">{{ $site_info->where('key_word', 'message_description')->first()->text }}</p>
+                        <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> -->
+                        <!-- <a class="btn btn-outline-light py-3 px-5 mt-2" href="" style="background-color: #6c757da3;" >Read More</a> -->
                     </div>
                     <div class="col-md-6">
                         <!-- <h1 class="text-white mb-4">Book A Tour</h1> -->
@@ -28,18 +28,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <input type="text" class="form-control bg-transparent" id="qountry" placeholder="Qountry" data-target="#date3" data-toggle="qountry" />
+                                        <label for="qountry">Qountry</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Destination 1</option>
-                                            <option value="2">Destination 2</option>
-                                            <option value="3">Destination 3</option>
-                                        </select>
-                                        <label for="select1">Destination</label>
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-transparent" id="city" placeholder="city" data-target="#date3" data-toggle="city" />
+                                        <label for="city">City</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -49,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-outline-light w-100 py-3" style="background-color: #6c757da3;" type="submit">Book Now</button>
                                 </div>
                             </div>
                         </form>
