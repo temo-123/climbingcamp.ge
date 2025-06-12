@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Gallery_photo;
 use App\Models\Gallery_video;
+use App\Models\Site_info;
+use App\Models\Site_image;
 
 class GalleryController extends Controller
 {

@@ -45,6 +45,12 @@ class VideoGalleryController extends CrudController
                 'type' => 'text',
                 'label' => "Video URL",
             ]
+
+            // https://backpackforlaravel.com/docs/4.0/crud-fields#video-1
+            //  'name' => 'video',
+            //     'label' => 'Link to video file on YouTube or Vimeo',
+            //     'type' => 'video',
+            //     'youtube_api_key' => 'AIzaSycLRoVwovRmbIf_BH3X12IcTCudAErRlCE',
         ]);
     }
 }

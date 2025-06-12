@@ -20,7 +20,7 @@ class ServiceController extends CrudController
         CRUD::setModel(\App\Models\Service::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/service');
         CRUD::setEntityNameStrings('Service', 'Services');
-        // CRUD::field('images')->type('upload_multiple')->withFiles();
+        CRUD::field('images')->type('upload_multiple')->withFiles();
 
         CRUD::setColumns([
             [
@@ -36,6 +36,11 @@ class ServiceController extends CrudController
         ]);
 
         CRUD::addFields([
+            // [   // Checkbox
+            //     'name' => 'active',
+            //     'label' => 'Public (Click hear for published article)',
+            //     'type' => 'checkbox'
+            // ],
             [
                 'name' => 'title',
                 'type' => 'text',
@@ -62,16 +67,16 @@ class ServiceController extends CrudController
             [
                 'name' => 'logo',
                 'type' => 'text',
-                'label' => 'Logo',
+                'label' => 'Logo ( https://fontawesome.com/v4/icons/ )',
             ],
             [
                 'name'      => 'images',
                 'label' => "Gallery images",
-                // 'type' => 'image',
                 'type'      => 'upload_multiple',
                 'update' => true,
-                'disc' => 'public',
+                'disk' => 'uploads',
                 'prefix' => 'uploads/',
+                'view' => 'public/storage/services_img/',
 
                 'crop' => true,
             ],

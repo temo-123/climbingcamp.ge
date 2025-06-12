@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\Site_info;
 use App\Models\Team_member;
 use App\Models\Tour;
+use App\Models\Site_image;
 
 class ServicesController extends Controller
 {
@@ -20,7 +21,6 @@ class ServicesController extends Controller
         $gallery_photos = Gallery_photo::get();
         $gallery_videos = Gallery_video::get();
         $services = Service::get();
-        $site_info = Site_info::get();
         $team_members = Team_member::get();
         $tours = Tour::get();
 
@@ -48,7 +48,15 @@ class ServicesController extends Controller
     function article_page(Request $request) {
         $gallery_photos = Gallery_photo::get();
         
+        $site_info = Site_info::get();
+        $site_image = Site_image::get();
+        
+        // $head_image = $site_image->where('key_word', 'header_image')->first();
+
         $data = [
+            'head_image' => [],
+            'site_image' => $site_image,
+            'site_info' => $site_info,
             'gallery_photos'=>$gallery_photos,
             'article' => Service::where('id', '=', $request->id)->first(),
         ];

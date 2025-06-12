@@ -19,21 +19,23 @@ class PhotoGalleryController extends CrudController
     {
         CRUD::setModel(\App\Models\Gallery_photo::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/photo_gallery');
-        CRUD::setEntityNameStrings('Photo_gallery', 'Photo_galleries');
+        CRUD::setEntityNameStrings('Photo gallery', 'Gallery images');
         CRUD::field('image')->type('upload')->withFiles();
+
+        $show = false;
 
         CRUD::setColumns([
             [
                 'name' => 'image',
                 'type' => 'image',
-                'label' => "Photo_gallery (Default value)",
+                'label' => "Image",
                 'height' => '100px',
                 // 'width'  => '30px',
             ],
             [
                 'name' => 'description',
                 'type' => 'text',
-                'label' => "Photo_gallery Name"
+                'label' => "Name / Description"
             ],
         ]);
 
@@ -50,11 +52,11 @@ class PhotoGalleryController extends CrudController
 			[
                 'label' => "Article Image",
                 'name' => "image",
-                'type' => ($show = false ? 'view' : 'upload'),
-                'view' => 'public/image/',
+                'type' => ($show ? 'view' : 'upload'),
+                'view' => 'public/storage/gallery_img/',
                 'upload' => true,
                 'crop' => true, // set to true to allow cropping, false to disable
-                'prefix' => '' // in case you only store the filename in the database, this text will be prepended to the database value
+                // 'prefix' => '' // in case you only store the filename in the database, this text will be prepended to the database value
             ],
         ]);
     }
