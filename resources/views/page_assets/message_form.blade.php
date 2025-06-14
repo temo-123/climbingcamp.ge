@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-outline-light w-100 py-3" style="background-color: #6c757da3;" type="submit">Book Now</button>
+                                    <a class="btn btn-outline-light w-100 py-3" style="background-color: #6c757da3;" type="submit" href="{{ route('mail') }}">Book Now</a>
                                 </div>
                             </div>
                         </form>
