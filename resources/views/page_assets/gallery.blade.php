@@ -25,7 +25,7 @@
                             @if ( $num == 1 )
                             <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
                                 <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid" src="public/storage/{{ $gallery_photo->image }}"   alt="">
+                                    <img class="img-fluid" src="public/{{ $gallery_photo->image }}"   alt="">
                                     <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30% OFF</div> -->
                                     <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">{{ $gallery_photo->description }}</div>
                                 </a>
@@ -34,7 +34,7 @@
                             @if ( $num == 2 )
                             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
                                 <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid" src="public/storage/{{ $gallery_photo->image }}"   alt="">
+                                    <img class="img-fluid" src="public/{{ $gallery_photo->image }}"   alt="">
                                     <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25% OFF</div> -->
                                     <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">{{ $gallery_photo->description }}</div>
                                 </a>
@@ -43,7 +43,7 @@
                             @if ( $num == 3 )
                             <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
                                 <a class="position-relative d-block overflow-hidden" href="">
-                                    <img class="img-fluid" src="public/storage/{{ $gallery_photo->image }}"   alt="">
+                                    <img class="img-fluid" src="public/{{ $gallery_photo->image }}"   alt="">
                                     <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35% OFF</div> -->
                                     <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">{{ $gallery_photo->description }}</div>
                                 </a>
@@ -58,7 +58,7 @@
                     @if ( $num == 4 )
                     <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px; visibility: visible; animation-delay: 0.7s; animation-name: zoomIn;">
                         <a class="position-relative d-block h-100 overflow-hidden" href="">
-                            <img class="img-fluid position-absolute w-100 h-100" src="public/storage/{{ $gallery_photo->image }}"   alt="" style="object-fit: cover;">
+                            <img class="img-fluid position-absolute w-100 h-100" src="public/{{ $gallery_photo->image }}"   alt="" style="object-fit: cover;">
                             <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF</div> -->
                             <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">{{ $gallery_photo->description }}</div>
                         </a>
