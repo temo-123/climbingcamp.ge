@@ -20,11 +20,11 @@
                             </div>
                             <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                                 @if($member->facebook != null)
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square mx-1" href="{{$member->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 @endif
                                     <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
                                 @if($member->instagram != null)
-                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square mx-1" href="{{$member->facebook}}" target="_blank"><i class="fab fa-instagram"></i></a>
                                 @endif
                             </div>
                             <div class="text-center p-4">
