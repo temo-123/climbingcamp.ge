@@ -21,6 +21,7 @@ class Service extends Model
         'description',
         'text',
         'logo',
+        'image',
         'images'
     ];
 
@@ -39,13 +40,31 @@ class Service extends Model
         });
     }
     
-    public function setImagesAttribute($value)
-    {
-        $attribute_name = "images";
-        $disk = "public";
-        $destination_path = "services_img/";
+    // public function setImagesAttribute($value)
+    // {
+    //     $attribute_name = "images";
+    //     $disk = "public";
+    //     $destination_path = "services_img/";
 
-        $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
+    //     $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
+    // }
+    public function setImageAttribute($value)
+    {
+        $attribute_name = "image";
+        // destination path relative to the disk above
+        $destination_path = "services_img";
+        $disk = "public";
+        
+        if ($value==null && $this->{$attribute_name} != null) {
+            // delete the image from disk
+            Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
+    
+            // set null in the database column
+            $this->attributes[$attribute_name] = null;
+        }
+    
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+        $this->attributes[$attribute_name] = $this->attributes[$attribute_name];
     }
 
     // public function setImagesAttribute($value)

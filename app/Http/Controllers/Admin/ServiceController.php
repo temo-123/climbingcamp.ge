@@ -20,7 +20,9 @@ class ServiceController extends CrudController
         CRUD::setModel(\App\Models\Service::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/service');
         CRUD::setEntityNameStrings('Service', 'Services');
+        
         // CRUD::field('images')->type('upload_multiple')->withFiles();
+        CRUD::field('image')->type('upload')->withFiles();
 
         CRUD::setColumns([
             [
@@ -32,6 +34,12 @@ class ServiceController extends CrudController
                 'name' => 'description',
                 'type' => 'text',
                 'label' => "Short description",
+            ],
+            [
+                'name' => 'image',
+                'type' => 'image',
+                'label' => "Image",
+                'height' => '100px',
             ],
         ]);
 
@@ -78,6 +86,15 @@ class ServiceController extends CrudController
                 'name' => 'logo',
                 'type' => 'text',
                 'label' => 'Logo ( https://fontawesome.com/v4/icons/ )',
+            ],
+			[
+                'label' => "Image",
+                'name' => "image",
+                'type' => ($show = false ? 'view' : 'upload'),
+                'view' => 'public/storage/service_img',
+                'upload' => true,
+                'crop' => true, // set to true to allow cropping, false to disable
+                'prefix' => '' // in case you only store the filename in the database, this text will be prepended to the database value
             ],
             // [
             //     'name'      => 'images',

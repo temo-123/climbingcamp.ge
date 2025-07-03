@@ -56,17 +56,24 @@ class ServicesController extends Controller
         
         $site_info = Site_info::get();
         $site_image = Site_image::get();
+
+        $actyve_servce = Service::where('id', '=', $request->id)->first();
         
-        // $head_image = $site_image->where('key_word', 'header_image')->first();
+        $head_image = $site_image->where('key_word', 'header_image')->first();
 
         $data = [
-            'head_image' => [],
+            // 'head_image' => [],
+            'head_image' => [
+                'image' => '../public/storage/' . $actyve_servce->image,
+                'title' => $actyve_servce->title, 
+                'short_description' => $actyve_servce->description
+            ],
             'site_image' => $site_image,
             'site_info' => $site_info,
             'gallery_photos'=>$gallery_photos,
-            'article' => Service::where('id', '=', $request->id)->first(),
+            'article' => $actyve_servce,
         ];
-
+        
         return view('pages/articles/article')->with($data);
     }
 }

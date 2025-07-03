@@ -21,6 +21,7 @@ class SiteImageController extends CrudController
         CRUD::setModel(\App\Models\Site_image::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/site_image');
         CRUD::setEntityNameStrings('Site Image', 'Site Images');
+        
         CRUD::field('image')->type('upload')->withFiles();
 
         CRUD::setColumns([
