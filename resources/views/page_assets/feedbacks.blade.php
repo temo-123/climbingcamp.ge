@@ -10,7 +10,7 @@
                 @foreach ($feedbacks as $feedback)
                 <div class="testimonial-item bg-white text-center border p-4">
                     @if($feedback->image == null)
-                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/public/storage/global_images/demo-user.jpg" style="width: 80px; height: 80px;">
+                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/public/images/demo-user.jpg" style="width: 80px; height: 80px;">
                     @else
                         <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/public/storage/{{$feedback->image}}" style="width: 80px; height: 80px;">
                     @endif

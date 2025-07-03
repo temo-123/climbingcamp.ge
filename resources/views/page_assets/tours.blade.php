@@ -18,7 +18,8 @@
                         <div class="d-flex border-bottom">
                             <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small> -->
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>{{$tour->days}}</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{$tour->price}}</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user text-primary me-2"></i>{{$tour->persons}}</small>
+                            <small class="flex-fill text-center py-2"><!-- <i class="fa fa-hand-peace-o text-primary me-2"></i> --> {{$tour->price}}</small>
                         </div>
                         <div class="text-center p-4">
                             <h3 class="mb-0">{{$tour->title}}</h3>

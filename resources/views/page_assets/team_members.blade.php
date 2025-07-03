@@ -13,7 +13,7 @@
                             <div class="overflow-hidden">
                                 <!-- <img class="img-fluid" src="img/team-1.jpg" alt=""> -->
                                 @if($member->image == null)
-                                    <img class="img-fluid" src="/public/storage/global_images/demo-user.jpg" alt="{{ $member->name }}">
+                                    <img class="img-fluid" src="/public/images/demo-user.jpg" alt="{{ $member->name }}">
                                 @else
                                     <img class="img-fluid" src="/public/storage/{{$member->image}}"  alt="{{ $member->name }}">
                                 @endif
