@@ -16,3 +16,14 @@
     <!-- Template Javascript -->
     <!-- <script src="js/main.js"></script> -->
     <script type="text/javascript" src="{{ asset('public/assets/js/main.js') }}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNJN1PF3CS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // gtag('11169688535', 'G-ZWL5N9YWDF');
+        gtag('{{env("GOOGLE_ANALITICS_ID")}}', '{{env("GOOGLE_ANALITICS_G_VAR")}}');
+    </script>
