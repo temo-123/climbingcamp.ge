@@ -1,7 +1,7 @@
 @if($head_image != []) 
 <div class="container-fluid bg-primary py-5 mb-5 hero-header" 
     style='
-            background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url( public/{{ $head_image }} );
+            background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url( {{ $head_image["image"] }} );
             packground-repeat: no-repeat;
             background-size: cover;
     '>
@@ -11,8 +11,11 @@
                 <!-- <h1 class="display-3 text-white mb-3 animated slideInDown">$head_image['title']}}</h1>
                 <p class="fs-4 text-white mb-4 animated slideInDown">$head_image['short_description']}}</p> -->
 
-                <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $site_info->where('key_word', 'head_title_description')->first()->text }}</h1>
-                <p class="fs-4 text-white mb-4 animated slideInDown">{{ $site_info->where('key_word', 'head_image_title')->first()->text }}</p>
+                <!-- <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $site_info->where('key_word', 'head_title_description')->first()->text }}</h1>
+                <p class="fs-4 text-white mb-4 animated slideInDown">{{ $site_info->where('key_word', 'head_image_title')->first()->text }}</p> -->
+
+                <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $head_image["title"] }}</h1>
+                <p class="fs-4 text-white mb-4 animated slideInDown">{!! $head_image["short_description"] !!}</p>
 
                 <!-- <div class="position-relative w-75 mx-auto animated slideInDown">
                     <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">

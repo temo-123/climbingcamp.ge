@@ -37,7 +37,7 @@
 
                         @foreach ($gallery_photos as $gallery_photo)
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="public/storage/{{ $gallery_photo->image }}" alt="">
+                                <img class="img-fluid bg-light p-1" src="../public/{{ $gallery_photo->image }}" alt="{{ $gallery_photo->description }}" style="height: 75px;">
                             </div>
 
                             <span style="display: none;">

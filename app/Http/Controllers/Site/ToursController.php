@@ -41,28 +41,25 @@ class ToursController extends Controller
 
     function article_page(Request $request) {
         $gallery_photos = Gallery_photo::get();
-        // $gallery_photos = Tour::where('id', '=', $request->id)->first()->images;
         $tour = Tour::where('id', '=', $request->id)->first();
         
         $site_info = Site_info::get();
         $site_image = Site_image::get();
 
-        $head_image = $site_image->where('key_word', 'header_image')->first();
+        $head_image = $tour->image;
 
         $data = [
-            'head_image' => $head_image->image,
+            // 'head_image' => $head_image->image,
             'site_image' => $site_image,
             'site_info' => $site_info,
-            // 'head_image' => [
-            //     'image' => '../public/storage/' . $tour -> image,
-            //     'title' => $tour -> title,
-            //     'short_description' => $tour -> description
-            // ],
+            'head_image' => [
+                'image' => '../storage/' . $tour -> image,
+                'title' => $tour -> title,
+                'short_description' => $tour -> description
+            ],
             'gallery_photos' => $gallery_photos,
             'article' => $tour,
         ];
-
-        // dd($data[]);
 
         return view('pages/articles/article')->with($data);
     }

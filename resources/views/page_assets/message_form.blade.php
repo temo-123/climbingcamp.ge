@@ -1,7 +1,13 @@
 
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
-            <div class="booking p-5">
+            <div class="booking p-5"
+                style="
+                    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url( {{$site_image->where('key_word', 'message_img')->first()->image}} );
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+            ">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-6 text-white">
                         <!-- <h6 class="text-white text-uppercase">Booking</h6> -->

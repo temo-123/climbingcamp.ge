@@ -3,8 +3,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6>
-                <h1 class="mb-5">Our Teame</h1>
-
+                <!-- <h1 class="mb-5">Our Teame</h1> -->
                 <h1 class="mb-5">{{ $site_info->where('key_word', 'team_members_title')->first()->text }}</h1>
             </div>
             <div class="row g-4">
@@ -14,9 +13,9 @@
                         <div class="overflow-hidden">
                             <!-- <img class="img-fluid" src="img/team-1.jpg" alt=""> -->
                             @if($member->image == null)
-                                <img class="img-fluid" src="/public/storage/global_images/demo-user.jpg">
+                                <img class="img-fluid" src="/public/storage/global_images/demo-user.jpg" alt="{{ $member->name }}">
                             @else
-                                <img class="img-fluid" src="/public/storage/{{$member->image}}">
+                                <img class="img-fluid" src="/public/storage/{{$member->image}}"  alt="{{ $member->name }}">
                             @endif
                         </div>
                         <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">

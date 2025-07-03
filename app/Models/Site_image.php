@@ -35,7 +35,7 @@ class Site_image extends Model
         $destination_path = "site_img";
 
         // if the image was erased
-        if ($value==null) {
+        if ($value==null && $this->{$attribute_name} != null) {
             // delete the image from disk
             // Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
             Storage::delete(Str::replaceFirst($this->{$attribute_name}));

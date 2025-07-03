@@ -11,7 +11,9 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="public/storage/{{$tour->image}}" alt="">
+                            <a href="{{ route( 'tour_page', ['id' => $tour->id] ) }}">
+                                <img class="img-fluid" src="public/storage/{{$tour->image}}" alt="{{$tour->title}}">
+                            </a>
                         </div>
                         <div class="d-flex border-bottom">
                             <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small> -->
@@ -19,7 +21,7 @@
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{$tour->price}}</small>
                         </div>
                         <div class="text-center p-4">
-                            <h3 class="mb-0">{{$tour->price}}</h3>
+                            <h3 class="mb-0">{{$tour->title}}</h3>
                             <!-- <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
