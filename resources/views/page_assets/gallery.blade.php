@@ -50,10 +50,13 @@
                             </div>
                             @endif
 
-                    @if ( $num == 3)
+                    <!-- {{-- @if ( $num == 3)
                         </div>
                     </div>
-                    @endif
+                    @endif --}} -->
+
+                        </div>
+                    </div>
 
                     @if ( $num == 4 )
                     <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px; visibility: visible; animation-delay: 0.7s; animation-name: zoomIn;">

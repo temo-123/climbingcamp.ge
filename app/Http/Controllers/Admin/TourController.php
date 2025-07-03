@@ -51,11 +51,6 @@ class TourController extends CrudController
                 'type' => 'text',
                 'label' => "What the price?"
             ],
-            [
-                'name' => 'description',
-                'type' => 'text',
-                'label' => "Description"
-            ],
         ]);
 
         CRUD::addFields([
@@ -96,7 +91,7 @@ class TourController extends CrudController
                 'label' => "What the price?"
             ],
             [
-                'name' => 'description',
+                'name' => 'text',
                 'type' => 'summernote',
                 'label' => "Description",
                 'options' => [

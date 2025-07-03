@@ -27,7 +27,7 @@ class Tour extends Model
         'days',
         'persons',
         'price',
-        'description',
+        'text',
         'image',
         'images',
     ];
