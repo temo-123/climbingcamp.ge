@@ -104,14 +104,14 @@ class SiteInfosTableSeeder extends Seeder
                 'key_word' => 'right_reserved_text',
                 'text' => 'All Right Reserved',
             ],
-            // [
-            //     'key_word' => 'head_title_description',
-            //     'text' => null,
-            // ],
-            // [
-            //     'key_word' => 'message_description',
-            //     'text' => null,
-            // ],
+            [
+                'key_word' => 'long_description_title',
+                'text' => '',
+            ],
+            [
+                'key_word' => 'long_description_text',
+                'text' => '',
+            ],
         );
 
         foreach ($site_info as $info) {

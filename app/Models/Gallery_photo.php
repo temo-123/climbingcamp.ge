@@ -27,6 +27,7 @@ class Gallery_photo extends Model
         });
     }
 
+    
     public function setImageAttribute($value)
     {
         $attribute_name = "image";
@@ -34,23 +35,19 @@ class Gallery_photo extends Model
         $destination_path = "gallery_img";
         $disk = "public";
         
-        // if the image was erased
-        if ($value==null) {
+        if ($value==null && $this->{$attribute_name} != null) {
             // delete the image from disk
-            // Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
-            Storage::delete(Str::replaceFirst($this->{$attribute_name}));
-
+            Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
+    
             // set null in the database column
             $this->attributes[$attribute_name] = null;
         }
+    
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+        $this->attributes[$attribute_name] = $this->attributes[$attribute_name];
 
-        // filename is generated -  md5($file->getClientOriginalName().random_int(1, 9999).time()).'.'.$file->getClientOriginalExtension()
-        if ($this->attributes[$attribute_name] != 'storage/' . $destination_path . '/' . pathinfo($value)['basename']) {
-            $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = pathinfo($value)['basename']);
-            // $this->attributes[$attribute_name] = 'storage/' . $this->attributes[$attribute_name];
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = pathinfo($value)['basename']);
 
-            $this->attributes[$attribute_name] = 'storage/' . $destination_path . '/' . pathinfo($value)['basename'];
-        }
-
+                $this->attributes[$attribute_name] = 'storage/' . $destination_path . '/' . pathinfo($value)['basename'];
     }
 }
