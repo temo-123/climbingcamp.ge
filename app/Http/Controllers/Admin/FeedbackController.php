@@ -24,6 +24,8 @@ class FeedbackController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/feedback');
         CRUD::setEntityNameStrings('Feedback', 'Feedbacks');
 
+        CRUD::field('image')->type('upload')->withFiles();
+
         CRUD::setColumns([
             [
                 'name' => 'person_name',
@@ -43,6 +45,17 @@ class FeedbackController extends CrudController
         ]);
 
         CRUD::addFields([
+
+            [   // Switch
+                'name'  => 'published',
+                'type'  => 'switch',
+                'label' => ' - Is This Article Public',
+
+                // optional
+                'color'    => '#232323', // in CoreUI v2 theme you can also specify bootstrap colors, like `primary`, `danger`, `success`, etc You can also overwrite the `--bg-switch-checked-color` css variable to change the color of the switch when it's checked
+                // 'onLabel' => '✓',
+                // 'offLabel' => '✕',
+            ],
             [
                 'name' => 'person_name',
                 'type' => 'text',
@@ -55,13 +68,25 @@ class FeedbackController extends CrudController
             ],
             [
                 'name' => 'text',
-                'type' => 'text',
-                'label' => "Feedback",
+                'type' => 'summernote',
+                'label' => "Text",
+                'options' => [
+                    'minheight' => 300,
+                    'height' => 400
+                ]
             ],
-            [
-                'name'      => 'image',
-                'type'      => 'upload',
-            ]
+			// [
+            //     'label' => "Article Image",
+            //     'name' => "image",
+            //     'type' => ($show = false ? 'view' : 'upload'),
+            // ],
+        ]);
+
+        CRUD::field('image')
+            ->type('upload')
+            ->withFiles([
+                'disk' => 'public', // the disk where file will be stored
+                // 'path' => 'uploads', // the path inside the disk where file will be stored
         ]);
     }
 }

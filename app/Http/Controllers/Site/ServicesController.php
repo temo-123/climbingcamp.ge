@@ -17,12 +17,13 @@ use App\Models\Site_image;
 class ServicesController extends Controller
 {
     function index() {
-        $feedbacks = Feedback::get();
+        $feedbacks = Feedback::where('published', '=', 1)->get();
+        $services = Service::where('published', '=', 1)->get();
+        $team_members = Team_member::where('published', '=', 1)->get();
+        $tours = Tour::where('published', '=', 1)->get();
+
         $gallery_photos = Gallery_photo::get();
         $gallery_videos = Gallery_video::get();
-        $services = Service::get();
-        $team_members = Team_member::get();
-        $tours = Tour::get();
 
         $site_info = Site_info::get();
         $site_image = Site_image::get();

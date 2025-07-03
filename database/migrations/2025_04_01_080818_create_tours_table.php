@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title')->nulable();
-            $table->string('location')->nulable();
-            $table->string('days')->nulable();
-            $table->string('persons')->nulable();
+            $table->string('title')->nullable();
+            $table->string('location')->nullable();
+            $table->string('days')->nullable();
+            $table->string('persons')->nullable();
 
-            $table->text('price')->nulable();
+            $table->text('price')->nullable();
 
-            $table->text('description')->nulable();
+            $table->text('description')->nullable();
             
-            $table->text('image')->nulable();
+            $table->text('image')->nullable();
 
             $table->timestamps();
         });

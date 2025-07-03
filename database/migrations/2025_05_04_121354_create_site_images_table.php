@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('key_word')->unique();
-            $table->text('image')->nulable();
+            $table->text('image')->nullable();
 
             $table->timestamps();
         });

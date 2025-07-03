@@ -15,6 +15,7 @@ class Team_member extends Model
     use HasFactory;
 
     protected $fillable = [
+        'published',
         'name',
         'position',
         'description',
@@ -25,7 +26,9 @@ class Team_member extends Model
     {
         parent::boot();
         static::deleting(function($obj) {
-            Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
+            if (isset($obj->image)){
+                Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
+            }
         });
     }
     
@@ -33,21 +36,18 @@ class Team_member extends Model
     {
         $attribute_name = "image";
         // destination path relative to the disk above
-        $destination_path = "articles";
-    
-        // if the image was erased
-        if ($value==null) {
+        $destination_path = "team_members";
+        $disk = "public";
+        
+        if ($value==null && $this->{$attribute_name} != null) {
             // delete the image from disk
-            Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
+            !is_null($value->image) && Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
     
             // set null in the database column
             $this->attributes[$attribute_name] = null;
         }
     
-        $disk = "public";
-        // filename is generated -  md5($file->getClientOriginalName().random_int(1, 9999).time()).'.'.$file->getClientOriginalExtension()
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-        $this->attributes[$attribute_name] = 'storage/' . $this->attributes[$attribute_name];
-    
+        $this->attributes[$attribute_name] = $this->attributes[$attribute_name];
     }
 }

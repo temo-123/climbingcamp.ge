@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Str;
+use Storage;
 
 class Tour extends Model
 {
@@ -20,6 +21,7 @@ class Tour extends Model
     // protected $casts = [
     
     protected $fillable = [
+        'published',
         'title',
         'location',
         'days',
@@ -44,13 +46,12 @@ class Tour extends Model
     
     public function setImageAttribute($value)
     {
-        $attribute_name = "images";
+        $attribute_name = "image";
         // destination path relative to the disk above
         $destination_path = "tours";
         $disk = "public";
-    
-        // if the image was erased
-        if ($value==null) {
+        
+        if ($value==null && $this->{$attribute_name} != null) {
             // delete the image from disk
             Storage::delete(Str::replaceFirst('storage/','public/',$this->{$attribute_name}));
     
@@ -58,20 +59,18 @@ class Tour extends Model
             $this->attributes[$attribute_name] = null;
         }
     
-        // filename is generated -  md5($file->getClientOriginalName().random_int(1, 9999).time()).'.'.$file->getClientOriginalExtension()
         $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
-        $this->attributes[$attribute_name] = 'storage/' . $this->attributes[$attribute_name];
-    
+        $this->attributes[$attribute_name] = $this->attributes[$attribute_name];
     }
 
-    public function setPhotosAttribute($value)
-    {
-        $attribute_name = "photos";
-        $disk = "public";
-        $destination_path = "folder_1/subfolder_1";
+    // public function setPhotosAttribute($value)
+    // {
+    //     $attribute_name = "photos";
+    //     $disk = "public";
+    //     $destination_path = "folder_1/subfolder_1";
 
-        $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
-    }
+    //     $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
+    // }
 
     // public function setImagesAttributes($value)
     // {

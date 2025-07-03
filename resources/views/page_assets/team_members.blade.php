@@ -12,16 +12,21 @@
                     @foreach ($team_members as $member)
                     <div class="team-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <!-- <img class="img-fluid" src="img/team-1.jpg" alt=""> -->
+                            @if($member->image == null)
+                                <img class="img-fluid" src="/public/storage/global_images/demo-user.jpg">
+                            @else
+                                <img class="img-fluid" src="/public/storage/{{$member->image}}">
+                            @endif
                         </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
                             <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
+                        </div> -->
                         <div class="text-center p-4">
                             <h5 class="mb-0">{{ $member->name }}</h5>
-                            <small>{{ $member->description }}</small>
+                            <small>{!! $member->description !!}</small>
                         </div>
                     </div>
                     @endforeach

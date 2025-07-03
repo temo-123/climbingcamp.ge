@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
 
-            $table->text('person_name')->nulable();
-            $table->text('country')->nulable();
-            $table->text('text')->nulable();
+            $table->text('person_name')->nullable();
+            $table->text('country')->nullable();
+            $table->text('text')->nullable();
 
-            $table->text('image')->nulable();
+            $table->text('image')->nullable();
 
             $table->timestamps();
         });

@@ -22,6 +22,7 @@ class TeamMemberController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/team_member');
         CRUD::setEntityNameStrings('Team', 'Teams');
 
+        CRUD::field('image')->type('upload')->withFiles();
         
         CRUD::setColumns([
             [
@@ -42,6 +43,16 @@ class TeamMemberController extends CrudController
         ]);
 
         CRUD::addFields([
+            [   // Switch
+                'name'  => 'published',
+                'type'  => 'switch',
+                'label' => ' - Is This Article Public',
+
+                // optional
+                'color'    => '#232323', // in CoreUI v2 theme you can also specify bootstrap colors, like `primary`, `danger`, `success`, etc You can also overwrite the `--bg-switch-checked-color` css variable to change the color of the switch when it's checked
+                // 'onLabel' => '✓',
+                // 'offLabel' => '✕',
+            ],
             [
                 'name' => 'name',
                 'type' => 'text',
@@ -72,6 +83,13 @@ class TeamMemberController extends CrudController
 
                 'crop' => true,
             ],
+        ]);
+
+        CRUD::field('image')
+            ->type('upload')
+            ->withFiles([
+                'disk' => 'public', // the disk where file will be stored
+                // 'path' => 'uploads', // the path inside the disk where file will be stored
         ]);
     }
 }

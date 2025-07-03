@@ -9,10 +9,14 @@
             <div class="owl-carousel testimonial-carousel position-relative">
                 @foreach ($feedbacks as $feedback)
                 <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">{{ $feedback->name }}</h5>
-                    <p>{{ $feedback->qountry }}</p>
-                    <p class="mb-0">{{ $feedback->feedback }}</p>
+                    @if($feedback->image == null)
+                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/public/storage/global_images/demo-user.jpg" style="width: 80px; height: 80px;">
+                    @else
+                        <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="/public/storage/{{$feedback->image}}" style="width: 80px; height: 80px;">
+                    @endif
+                    <h5 class="mb-0">{{ $feedback->person_name }}</h5>
+                    <p>{{ $feedback->country }}</p>
+                    <p class="mb-0">{!! $feedback->text !!}</p>
                 </div>
                 @endforeach
             </div>

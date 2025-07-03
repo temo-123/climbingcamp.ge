@@ -20,14 +20,14 @@
                         </div>
                         <div class="text-center p-4">
                             <h3 class="mb-0">{{$tour->price}}</h3>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>{{$tour->description}}</p>
+                            </div> -->
+                            <p>{!!$tour->description!!}</p>
                             <div class="d-flex justify-content-center mb-2">
                                 <a href="{{ route( 'tour_page', ['id' => $tour->id] ) }}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">Read More</a>
                                 <!-- <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a> -->

@@ -6,6 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -15,6 +16,7 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
+        'published',
         'title',
         'description',
         'text',
@@ -30,7 +32,10 @@ class Service extends Model
     {
         parent::boot();
         static::deleting(function($obj) {
-            Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
+            if (isset($obj->images)){
+                dd(json_decode($obj->images));
+                Storage::delete(Str::replaceFirst('storage/','public/', $obj->images));
+            }
         });
     }
     
