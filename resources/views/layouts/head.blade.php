@@ -6,18 +6,18 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="{{ $site_info->where('key_word', 'site_title')->first()->text }}" name="keywords">
     <meta content="{{ $site_info->where('key_word', 'site_text')->first()->text }}" name="description">
-    <meta content="{{ $site_image->where('key_word', 'header_image')->first()->image }}" name="image">
+    <meta content="{{env('APP_URL')}}/{{ $site_image->where('key_word', 'header_image')->first()->image }}" name="image">
 
     <meta name="twitter:title" content="{{ $site_info->where('key_word', 'site_title')->first()->text }}">
     <meta name="twitter:description" content="{{ $site_info->where('key_word', 'site_text')->first()->text }}">
-    <meta name="twitter:image" content="{{ $head_image['image'] }}">
-    <meta name="twitter:card" content="{{ $head_image['image'] }}">
+    <meta name="twitter:image" content="{{env('APP_URL')}}/{{ $head_image['image'] }}">
+    <meta name="twitter:card" content="{{env('APP_URL')}}/{{ $head_image['image'] }}">
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://some-url" />
+    <meta property="og:url" content="{{env('APP_URL')}}" />
     <meta property="og:title" content="{{ $site_info->where('key_word', 'site_title')->first()->text }}" />
     <meta property="og:description" content="{{ $site_info->where('key_word', 'site_text')->first()->text }}" />
-    <meta property="og:image" content="{{ $head_image['image'] }}" />
+    <meta property="og:image" content="{{env('APP_URL')}}/{{ $head_image['image'] }}" />
 
     <!-- Favicon -->
     <link href="public/images/logo.png" rel="icon">
