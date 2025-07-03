@@ -10,7 +10,7 @@
                 <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                 <!-- <h1 class="mb-4">Welcome to <span class="text-primary">Tourist</span></h1> -->
                 <h1>{{ $site_info->where('key_word', 'welcome_title')->first()->text }}</h1>
-                <p>{{ $site_info->where('key_word', 'welcome_text')->first()->text }}</p>
+                <p>{!! $site_info->where('key_word', 'welcome_text')->first()->text !!}</p>
                 <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                 <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> -->
                 <!-- <div class="row gy-2 gx-4 mb-4">
