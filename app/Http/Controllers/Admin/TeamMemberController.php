@@ -64,6 +64,16 @@ class TeamMemberController extends CrudController
                 'label' => "Position",
             ],
             [
+                'name' => 'facebook',
+                'type' => 'url',
+                'label' => "Facebook",
+            ],
+            [
+                'name' => 'instagram',
+                'type' => 'url',
+                'label' => "Instagram",
+            ],
+            [
                 'name' => 'description',
                 'type' => 'summernote',
                 'label' => "Description",

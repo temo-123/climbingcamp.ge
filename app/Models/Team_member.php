@@ -20,6 +20,9 @@ class Team_member extends Model
         'position',
         'description',
         'image',
+
+        'facebook',
+        'instagram',
     ];
 
     public static function boot()

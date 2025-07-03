@@ -18,11 +18,15 @@
                                     <img class="img-fluid" src="/public/storage/{{$member->image}}"  alt="{{ $member->name }}">
                                 @endif
                             </div>
-                            <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div> -->
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                                @if($member->facebook != null)
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                @endif
+                                    <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
+                                @if($member->instagram != null)
+                                    <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                @endif
+                            </div>
                             <div class="text-center p-4">
                                 <h5 class="mb-0">{{ $member->name }}</h5>
                                 <small>{!! $member->position !!}</small>
