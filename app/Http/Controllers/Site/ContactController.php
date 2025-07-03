@@ -32,7 +32,11 @@ class ContactController extends Controller
         $head_image = $site_image->where('key_word', 'header_image')->first();
 
         $data = [
-            'head_image' => $head_image->image,
+            'head_image' => [
+                'image' => '../public/' . $head_image->image,
+                'title' => $site_info->where('key_word', 'head_image_title')->first()->text, 
+                'short_description' => $site_info->where('key_word', 'head_image_description')->first()->text
+            ],
             'site_image' => $site_image,
             'site_info' => $site_info,
             'feedbacks'=>$feedbacks,
