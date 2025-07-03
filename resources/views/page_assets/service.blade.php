@@ -21,7 +21,7 @@
 
                                 <h5>{{$service->title}}</h5>
                                 
-                                <p>{{$service->description}}</p>
+                                <p>{!!$service->description!!}</p>
                             </div>
                         </div>
                     </a>
