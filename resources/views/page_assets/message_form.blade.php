@@ -11,8 +11,8 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-md-6 text-white">
                         <!-- <h6 class="text-white text-uppercase">Booking</h6> -->
-                        <h1 class="text-white mb-4">{{ $site_info->where('key_word', 'message_title')->first()->text }}</h1>
-                        <p class="mb-4">{{ $site_info->where('key_word', 'message_description')->first()->text }}</p>
+                        <h1 class="text-white mb-4">{{ $site_info->where('key_word', 'message_form_title')->first()->text }}</h1>
+                        <p class="mb-4">{{ $site_info->where('key_word', 'message_form_text')->first()->text }}</p>
                         <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> -->
                         <!-- <a class="btn btn-outline-light py-3 px-5 mt-2" href="" style="background-color: #6c757da3;" >Read More</a> -->
                     </div>

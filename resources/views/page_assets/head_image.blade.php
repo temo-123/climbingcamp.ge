@@ -8,11 +8,6 @@
     <div class="container py-5">
         <div class="row justify-content-center py-5">
             <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                <!-- <h1 class="display-3 text-white mb-3 animated slideInDown">$head_image['title']}}</h1>
-                <p class="fs-4 text-white mb-4 animated slideInDown">$head_image['short_description']}}</p> -->
-
-                <!-- <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $site_info->where('key_word', 'head_title_description')->first()->text }}</h1>
-                <p class="fs-4 text-white mb-4 animated slideInDown">{{ $site_info->where('key_word', 'head_image_title')->first()->text }}</p> -->
 
                 <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $head_image["title"] }}</h1>
                 <p class="fs-4 text-white mb-4 animated slideInDown">{!! $head_image["short_description"] !!}</p>

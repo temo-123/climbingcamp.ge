@@ -21,7 +21,7 @@ return new class extends Migration
 
             $table->text('price')->nullable();
 
-            $table->text('description')->nullable();
+            $table->text('text')->nullable();
             
             $table->text('image')->nullable();
 

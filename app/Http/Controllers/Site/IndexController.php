@@ -36,7 +36,7 @@ class IndexController extends Controller
             'head_image' => [
                 'image' => '../storage/' . $head_image,
                 'title' => $site_info->where('key_word', 'head_image_title')->first()->text, 
-                'short_description' => $site_info->where('key_word', 'head_title_description')->first()->text
+                'short_description' => $site_info->where('key_word', 'head_image_description')->first()->text
             ],
 
             'site_image' => $site_image,
