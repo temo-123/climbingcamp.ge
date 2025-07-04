@@ -18,7 +18,7 @@
     <script type="text/javascript" src="{{ asset('public/assets/js/main.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNJN1PF3CS"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNJN1PF3CS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -26,4 +26,14 @@
 
         // gtag('11169688535', 'G-ZWL5N9YWDF');
         gtag('{{env("GOOGLE_ANALITICS_ID")}}', '{{env("GOOGLE_ANALITICS_G_VAR")}}');
+    </script> -->
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5W0VEL1KT"></script> -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id={{env("GOOGLE_ANALITICS_G_VAR")}}'></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{env("GOOGLE_ANALITICS_G_VAR")}}');
     </script>
