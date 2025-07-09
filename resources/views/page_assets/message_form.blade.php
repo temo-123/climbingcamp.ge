@@ -18,40 +18,47 @@
                     </div>
                     <div class="col-md-6">
                         <!-- <h1 class="text-white mb-4">Book A Tour</h1> -->
-                        <form>
+                        <form action="{{ route('mail') }}">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <input name="name" type="text" class="form-control bg-transparent" id="name" placeholder="Your Name">
+                                        <label class="form-label" for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
+                                        <input name="surname" type="text" class="form-control bg-transparent" id="surname" placeholder="Your Surname" required>
+                                        <label class="form-label" for="surname">Your Surname</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input name="email" type="email" class="form-control bg-transparent" id="email" placeholder="Your Email" required>
+                                        <label class="form-label" for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent" id="qountry" placeholder="Qountry" data-target="#date3" data-toggle="qountry" />
-                                        <label for="qountry">Qountry</label>
+                                        <input name="country" type="text" class="form-control bg-transparent" id="country" placeholder="country" data-target="#date3" data-toggle="country" required />
+                                        <label class="form-label" for="country">Country</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent" id="city" placeholder="city" data-target="#date3" data-toggle="city" />
-                                        <label for="city">City</label>
+                                        <input name="city" type="text" class="form-control bg-transparent" id="city" placeholder="city" data-target="#date3" data-toggle="city" required />
+                                        <label class="form-label" for="city">City</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Special Request</label>
+                                        <textarea name='message' class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px" required></textarea>
+                                        <label class="form-label" for="message">Special Request</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <a class="btn btn-outline-light w-100 py-3" style="background-color: #6c757da3;" type="submit" href="{{ route('mail') }}">Book Now</a>
+                                    <button class="btn btn-outline-light w-100 py-3 form-btn" type="submit" >Book Now</button>
                                 </div>
                             </div>
                         </form>

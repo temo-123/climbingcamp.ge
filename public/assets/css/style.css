@@ -1,3 +1,21 @@
+/********** My CSS **********/
+.form-floating {
+    background-color: #676767c9;
+}
+.form-label {
+    color: #000;
+}
+.form-control{
+    color: #000;
+}
+.form-btn{
+    background-color: #6c757da3;
+}
+.form-btn:hover{
+    background-color: #86B817;
+    /* color: #fff; */
+}
+
 /********** Template CSS **********/
 :root {
     --primary: #86B817;

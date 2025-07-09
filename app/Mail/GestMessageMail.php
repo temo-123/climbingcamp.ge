@@ -13,14 +13,24 @@ class GestMessageMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $name;
+    public $surname;
+    public $email;
+    public $country;
+    public $city;
+    public $message;
 
     /**
      * Create a new message instance.
      */
     public function __construct($data)
     {
-        $this->data = $data;
+        $this->name = $data['name'];
+        $this->surname = $data['surname'];
+        $this->email = $data['email'];
+        $this->country = $data['country'];
+        $this->city = $data['city'];
+        $this->message = $data['message'];
     }
 
     /**
@@ -39,7 +49,15 @@ class GestMessageMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.GestMessageMail',
+            markdown: 'mail.GestMessageMail',
+            with: [
+                'name' => $this->name,
+                'surname' => $this->surname,
+                'email' => $this->email,
+                'country' => $this->country,
+                'city' => $this->city,
+                'message' => $this->message,
+            ],
         );
     }
 
@@ -50,8 +68,6 @@ class GestMessageMail extends Mailable
      */
     public function attachments(): array
     {
-        return [
-            // $data
-        ];
+        return [];
     }
 }
