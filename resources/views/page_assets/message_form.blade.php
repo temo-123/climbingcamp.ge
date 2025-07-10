@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-6">
                         <!-- <h1 class="text-white mb-4">Book A Tour</h1> -->
-                        <form action="{{ route('mail') }}">
+                        <form action="{{ route('mail') }}" if="demo-form" method="POST">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -58,8 +58,16 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-outline-light w-100 py-3 form-btn" type="submit" >Book Now</button>
+                                    <button class="btn btn-outline-light w-100 py-3 form-btn"
+                                            
+                                            g-recaptcha="true"
+                                            data-recaptcha-sitekey="6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV"
+                                            data-sitekey="6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV" 
+                                            data-callback='onSubmit' 
+                                            data-action='submit'
+                                    >Book Now</button>
                                 </div>
+                                
                             </div>
                         </form>
                     </div>

@@ -18,17 +18,7 @@
     <script type="text/javascript" src="{{ asset('public/assets/js/main.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNJN1PF3CS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        // gtag('11169688535', 'G-ZWL5N9YWDF');
-        gtag('{{env("GOOGLE_ANALITICS_ID")}}', '{{env("GOOGLE_ANALITICS_G_VAR")}}');
-    </script> -->
-
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5W0VEL1KT"></script> -->
     <script async src='https://www.googletagmanager.com/gtag/js?id={{env("GOOGLE_ANALITICS_G_VAR")}}'></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,4 +26,31 @@
         gtag('js', new Date());
 
         gtag('config', '{{env("GOOGLE_ANALITICS_G_VAR")}}');
+    </script>
+
+    <!-- Google ReCapcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            // Initialize WOW.js
+            new WOW().init();
+
+            // Initialize Owl Carousel
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 3 },
+                    1000: { items: 5 }
+                }
+            });
+        });
+    </script> -->
+
+    <script>
+        function onSubmit('6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV') {
+            document.getElementById("demo-form").submit();
+        }
     </script>
