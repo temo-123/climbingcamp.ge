@@ -12,13 +12,15 @@
                 <a href="{{ route('index') }}" class="nav-item nav-link active">Home</a>
                 <a href="{{ route('about_us') }}" class="nav-item nav-link">About us</a>
                 <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
-                <div class="nav-item dropdown">
+                <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
+                <a href="{{ route('tours') }}" class="nav-item nav-link">Tours</a>
+                <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                     <div class="dropdown-menu m-0">
                         <a href="{{ route('gallery') }}" class="dropdown-item">Gallery</a>
                         <a href="{{ route('tours') }}" class="dropdown-item">Tours</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-4">Contact</a>
         </div>

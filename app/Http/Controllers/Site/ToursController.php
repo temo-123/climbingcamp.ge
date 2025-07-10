@@ -29,8 +29,8 @@ class ToursController extends Controller
         $data = [
             'head_image' => [
                 'image' => '../public/' . $head_image->image,
-                'title' => $site_info->where('key_word', 'head_image_title')->first()->text, 
-                'short_description' => $site_info->where('key_word', 'head_image_description')->first()->text
+                'title' => $site_info->where('key_word', 'tours_title')->first()->text, 
+                'short_description' => $site_info->where('key_word', 'tours_text')->first()->text
             ],
             // 'head_image' => $head_image->image,
             'site_image' => $site_image,
