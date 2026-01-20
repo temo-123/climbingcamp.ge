@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-md-6">
                         <!-- <h1 class="text-white mb-4">Book A Tour</h1> -->
-                        <form action="{{ route('mail') }}" if="demo-form" method="POST">
+                        <form action="{{ route('mail') }}" id="demo-form" method="POST">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">

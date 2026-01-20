@@ -50,7 +50,7 @@
     </script> -->
 
     <script>
-        function onSubmit('6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV') {
+        function onSubmit(token) {
             document.getElementById("demo-form").submit();
         }
     </script>
