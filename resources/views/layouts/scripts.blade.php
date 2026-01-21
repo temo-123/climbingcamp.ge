@@ -14,11 +14,9 @@
     <script src="{{ asset('public/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <!-- <script src="js/main.js"></script> -->
     <script type="text/javascript" src="{{ asset('public/assets/js/main.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
     <script async src='https://www.googletagmanager.com/gtag/js?id={{env("GOOGLE_ANALITICS_G_VAR")}}'></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,27 +28,24 @@
 
     <!-- Google ReCapcha -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <!-- <script>
-        $(document).ready(function() {
-            // Initialize WOW.js
-            new WOW().init();
-
-            // Initialize Owl Carousel
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 3 },
-                    1000: { items: 5 }
-                }
-            });
-        });
-    </script> -->
 
     <script>
-        function onSubmit(token) {
+        // Handle send mail button click
+        document.getElementById("submit-btn").addEventListener("click", function(e) {
+            var recaptchaResponse = document.querySelector('#g-recaptcha-response');
+            
+            if (!recaptchaResponse || !recaptchaResponse.value) {
+                // Show error message
+                document.getElementById("recaptcha-error").style.display = 'block';
+                return false;
+            }
+            
+            // Hide error and show loading
+            document.getElementById("recaptcha-error").style.display = 'none';
+            this.disabled = true;
+            this.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Sending...';
+            
+            // Submit the form
             document.getElementById("demo-form").submit();
-        }
+        });
     </script>

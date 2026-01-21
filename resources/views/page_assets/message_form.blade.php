@@ -10,20 +10,16 @@
             ">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-6 text-white">
-                        <!-- <h6 class="text-white text-uppercase">Booking</h6> -->
                         <h1 class="text-white mb-4">{{ $site_info->where('key_word', 'message_form_title')->first()->text }}</h1>
                         <p class="mb-4">{!! $site_info->where('key_word', 'message_form_text')->first()->text !!}</p>
-                        <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> -->
-                        <!-- <a class="btn btn-outline-light py-3 px-5 mt-2" href="" style="background-color: #6c757da3;" >Read More</a> -->
                     </div>
                     <div class="col-md-6">
-                        <!-- <h1 class="text-white mb-4">Book A Tour</h1> -->
                         <form action="{{ route('mail') }}" id="demo-form" method="POST">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input name="name" type="text" class="form-control bg-transparent" id="name" placeholder="Your Name">
+                                <input name="name" type="text" class="form-control bg-transparent" id="name" placeholder="Your Name" required>
                                         <label class="form-label" for="name">Your Name</label>
                                     </div>
                                 </div>
@@ -58,14 +54,17 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                    <div id="recaptcha-error" class="text-danger mt-2" style="display: none;">Please complete the CAPTCHA before sending.</div>
+                                </div>
+                                <div class="col-12">
                                     <button class="btn btn-outline-light w-100 py-3 form-btn"
-                                            
-                                            g-recaptcha="true"
-                                            data-recaptcha-sitekey="6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV"
-                                            data-sitekey="6Ldkq30rAAAAAHfsotKZHMrm9cigOQXFAIGY03JV" 
-                                            data-callback='onSubmit' 
-                                            data-action='submit'
-                                    >Book Now</button>
+                                            id="submit-btn"
+                                            type="submit"
+                                    >Send Mail</button>
+                                    <div id="captcha-loading" class="text-white mt-2" style="display: none;">
+                                        <span class="spinner-border spinner-border-sm"></span> Sending...
+                                    </div>
                                 </div>
                                 
                             </div>
@@ -75,3 +74,27 @@
             </div>
         </div>
     </div>
+
+<!-- Alert Messages -->
+@if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+        <strong>✓ Success!</strong> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+@if($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+        <strong>✗ Error!</strong>
+        @if($errors->has('recaptcha'))
+            {{ $errors->first('recaptcha') }}
+        @elseif($errors->has('mail'))
+            {{ $errors->first('mail') }}
+        @else
+            @foreach($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        @endif
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
