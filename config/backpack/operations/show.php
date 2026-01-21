@@ -7,6 +7,9 @@
  */
 
 return [
+    // Which component to use for displaying the Show page?
+    'component' => 'bp-datagrid', // options: bp-datagrid, bp-datalist, or a custom component alias
+
     // Define the size/looks of the content div for all CRUDs
     // To override per Controller use $this->crud->setShowContentClass('class-string')
     'contentClass' => 'col-md-12',
