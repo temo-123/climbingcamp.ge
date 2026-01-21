@@ -9,11 +9,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="{{ route('index') }}" class="nav-item nav-link active">Home</a>
-                <a href="{{ route('about_us') }}" class="nav-item nav-link">About us</a>
-                <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
-                <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
-                <a href="{{ route('tours') }}" class="nav-item nav-link">Tours</a>
+                <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->routeIs('index') ? 'active' : '' }}">Home</a>
+                <a href="{{ route('about_us') }}" class="nav-item nav-link {{ request()->routeIs('about_us') ? 'active' : '' }}">About us</a>
+                <a href="{{ route('services') }}" class="nav-item nav-link {{ request()->routeIs('services', 'service_page') ? 'active' : '' }}">Services</a>
+                <a href="{{ route('gallery') }}" class="nav-item nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Gallery</a>
+                <a href="{{ route('tours') }}" class="nav-item nav-link {{ request()->routeIs('tours', 'tour_page') ? 'active' : '' }}">Tours</a>
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                     <div class="dropdown-menu m-0">
@@ -22,7 +22,7 @@
                     </div>
                 </div> -->
             </div>
-            <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-4">Contact</a>
+            <a href="{{ route('contact') }}" class="btn btn-primary rounded-pill py-2 px-4 {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
         </div>
     </nav>
 

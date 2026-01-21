@@ -1,4 +1,17 @@
 /********** My CSS **********/
+
+/* Contact button active state */
+.navbar-collapse .btn.rounded-pill.active {
+    background-color: #54711b !important;
+    border-color: #86B817 !important;
+    box-shadow: 0 0 10px rgba(134, 184, 23, 0.5);
+}
+
+.navbar-collapse .btn.rounded-pill.active:hover {
+    background-color: #6d9612 !important;
+    border-color: #6d9612 !important;
+}
+
 .form-floating {
     background-color: #676767c9;
 }
