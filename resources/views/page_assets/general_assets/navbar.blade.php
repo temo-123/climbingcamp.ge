@@ -5,8 +5,8 @@
             <!-- <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0"> -->
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ $site_info->where('key_word', 'address')->first()->text }}</small>
-                    <a href="tel:{{ $site_info->where('key_word', 'phone_number')->first()->text }}" class="me-3 text-light text-decoration-none"><i class="fa fa-phone-alt me-2"></i>{{ $site_info->where('key_word', 'phone_number')->first()->text }}</a>
-                    <a href="mailto:{{ $site_info->where('key_word', 'email')->first()->text }}" class="text-light text-decoration-none"><i class="fa fa-envelope-open me-2"></i>{{ $site_info->where('key_word', 'email')->first()->text }}</a>
+                    <small class="me-3"><a href="tel:{{ $site_info->where('key_word', 'phone_number')->first()->text }}" class="text-light text-decoration-none"><i class="fa fa-phone-alt me-2"></i>{{ $site_info->where('key_word', 'phone_number')->first()->text }}</a></small>
+                    <small><a href="mailto:{{ $site_info->where('key_word', 'email')->first()->text }}" class="text-light text-decoration-none"><i class="fa fa-envelope-open me-2"></i>{{ $site_info->where('key_word', 'email')->first()->text }}</a></small>
                 </div>
             </div>
             <!-- <div class="col-lg-4 text-center text-lg-end">
