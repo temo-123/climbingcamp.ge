@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\GestMessageMail;
 use App\Models\SiteInfo;
 use Redirect;
-use ReCaptcha\ReCaptcha;
+use Illuminate\Support\Facades\Http;
 
 class GestMessageMailController extends Controller
 {
@@ -20,8 +20,6 @@ class GestMessageMailController extends Controller
             return Redirect::back()->withErrors(['recaptcha' => 'reCAPTCHA configuration error.']);
         }
         
-        $recaptcha = new ReCaptcha($recaptchaSecretKey);
-        
         // Validate reCAPTCHA v2 checkbox token
         $recaptchaToken = $request->input('g-recaptcha-response');
         if (empty($recaptchaToken)) {
@@ -29,10 +27,17 @@ class GestMessageMailController extends Controller
             return Redirect::back()->withErrors(['recaptcha' => 'Please complete the CAPTCHA to send your message.']);
         }
         
-        $recaptchaResponse = $recaptcha->verify($recaptchaToken, $request->ip());
+        // Direct HTTP call to Google's reCAPTCHA API (no library dependency)
+        $recaptchaResponse = Http::get('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => $recaptchaSecretKey,
+            'response' => $recaptchaToken,
+            'remoteip' => $request->ip()
+        ]);
         
-        if (!$recaptchaResponse->isSuccess() || $recaptchaResponse->getErrorCodes()) {
-            $errorCodes = $recaptchaResponse->getErrorCodes();
+        $recaptchaData = $recaptchaResponse->json();
+        
+        if (!$recaptchaData['success']) {
+            $errorCodes = $recaptchaData['error-codes'] ?? [];
             \Log::error('reCAPTCHA verification failed: ' . json_encode($errorCodes));
             return Redirect::back()->withErrors(['recaptcha' => 'Please complete the CAPTCHA to send your message.']);
         }
