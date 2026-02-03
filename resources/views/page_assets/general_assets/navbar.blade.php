@@ -4,7 +4,7 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ $site_info->where('key_word', 'address')->first()->text }}</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $site_info->where('key_word', 'phone_number')->first()->text }}</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $site_info->where('key_word', 'email')->first()->text }}m</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $site_info->where('key_word', 'email')->first()->text }}</small>
                 </div>
             </div>
             <!-- <div class="col-lg-4 text-center text-lg-end">
