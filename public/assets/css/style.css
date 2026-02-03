@@ -1,5 +1,119 @@
 /********** My CSS **********/
 
+/* Mobile sticky navbar body padding fix */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 0;
+    }
+    
+    /* Mobile navbar container - full width */
+    .sticky-top.navbar-light {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        z-index: 9999;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Mobile navbar text adjustments */
+    .navbar-light .navbar-brand h1 {
+        font-size: 1.25rem !important;
+        line-height: 1.2;
+    }
+    
+    .navbar-light .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        padding: 15px 20px !important;
+        margin: 5px 15px !important;
+        text-align: left;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-bottom: none !important;
+        color: #333 !important;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+        background: #86B817 !important;
+        color: #fff !important;
+    }
+    
+    .navbar-light.navbar-expand-lg .navbar-nav {
+        padding: 10px 15px;
+        gap: 8px;
+    }
+    
+    .navbar-light .btn.rounded-pill {
+        display: block;
+        width: calc(100% - 30px);
+        margin: 15px;
+        padding: 12px 25px !important;
+        text-align: center;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        background: #86B817 !important;
+        color: #fff !important;
+        border: none !important;
+    }
+    
+    .navbar-light .btn.rounded-pill:hover {
+        background: #6d9612 !important;
+    }
+    
+    .navbar-toggler {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border: none;
+        background: transparent;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    
+    .navbar-collapse {
+        background: #fff;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 15px;
+    }
+    
+    /* Top contact bar mobile adjustments */
+    .container-fluid.bg-dark {
+        padding: 10px 15px !important;
+    }
+    
+    .container-fluid.bg-dark .d-inline-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        gap: 10px 20px;
+    }
+    
+    .container-fluid.bg-dark small {
+        font-size: 11px;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        white-space: nowrap;
+    }
+    
+    .container-fluid.bg-dark small i {
+        margin-right: 5px !important;
+    }
+}
+
 /* Contact button active state */
 .navbar-collapse .btn.rounded-pill.active {
     background-color: #54711b !important;
@@ -142,8 +256,14 @@
 
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
-        position: relative;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
         background: #FFFFFF;
+        z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .navbar-light .navbar-collapse {

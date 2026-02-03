@@ -1,4 +1,4 @@
-<div class="container-fluid position-relative p-0">
+<div class="container-fluid position-relative p-0 sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <a href="{{ route('index') }}" class="navbar-brand p-0">
             <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>{{ $site_info->where('key_word', 'site_title')->first()->text }}</h1>

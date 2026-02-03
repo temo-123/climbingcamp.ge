@@ -1,6 +1,8 @@
-<div class="container-fluid bg-dark px-5 d-none d-lg-block">
+<!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block"> -->
+    <div class="container-fluid bg-dark px-5 sticky-top d-block">
         <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+            <!-- <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0"> -->
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ $site_info->where('key_word', 'address')->first()->text }}</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $site_info->where('key_word', 'phone_number')->first()->text }}</small>
