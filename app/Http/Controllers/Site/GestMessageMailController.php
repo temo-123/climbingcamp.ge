@@ -57,11 +57,29 @@ class GestMessageMailController extends Controller
             $toEmail = $siteInfo ? $siteInfo->text : 'test@test.ge';
             
             Mail::to($toEmail)->send(new GestMessageMail($data));
+            
+            // Send confirmation email to the user
+            $this->sendConfirmationEmail($request->email);
+            
             return Redirect::back()->with('success', 'Thank you for message! We will contact you shortly.');
         } catch (\Exception $e) {
             // Log the actual error for debugging
             \Log::error('Mail sending failed: ' . $e->getMessage());
             return Redirect::back()->withErrors(['mail' => 'Mail sending failed. Please try again later.']);
         }
+    }
+    
+    /**
+     * Send confirmation email to user
+     */
+    private function sendConfirmationEmail($email)
+    {
+        Mail::to($email)->send(new class extends \Illuminate\Mail\Mailable {
+            public function build()
+            {
+                return $this->subject('Thank you for contacting ' . config('app.name'))
+                            ->markdown('mail.ConfirmationMail');
+            }
+        });
     }
 }
